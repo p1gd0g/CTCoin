@@ -41,7 +41,9 @@ func (node *Node) NewTx() {
 	fmt.Scan(&AT1, &AT2)
 	AT = AT1 + " " + AT2
 
-	tx := transaction.NewTx(node.Account.Wallet[node.Account.WalletIndex-1], node.Pool[node.PoolIndex-1], node.Pool[node.PoolIndex-2], A, AT)
+	tx := transaction.NewTx(
+		node.Account.Wallet[node.Account.WalletIndex-1],
+		node.Pool[node.PoolIndex-1], node.Pool[node.PoolIndex-2], A, AT)
 	node.Account.WalletIndex--
 
 	node.Pool[node.PeerIndex] = tx
@@ -152,7 +154,28 @@ func (node *Node) HandleCommand(command string) {
 		node.ShowTx()
 
 	default:
-		fmt.Println("\033[1;31;40m", "What?", "\033[0m")
+		fmt.Println("\033[1;31;40m",
+			`		case "exit":
+			Exit the node.
+		case "addPeer":
+			Add a peer node.
+		case "showAccount":
+			Show the account info.
+		case "mine":
+			Mine some new coins.
+		case "newTx":
+			Create a new transaction.
+		case "showPeerIndex":
+			Show peer's index.
+		case "showPoolIndex":
+			Show peer pool's indexes.
+		case "showWalletIndex":
+			Show wallet index.
+		case "trace":
+			Trace a transaction.
+		case "showTx":
+			Show a transaction's info.`,
+			"\033[0m")
 	}
 }
 
