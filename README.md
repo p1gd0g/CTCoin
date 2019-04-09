@@ -17,7 +17,8 @@ you are a experienced cryptographer.
 
 ## Build
 
-Build [PBC library](https://crypto.stanford.edu/pbc/) then `go get -u github.com/Nik-U/pbc`.
+Build [PBC library](https://crypto.stanford.edu/pbc/) then
+`go get -u github.com/Nik-U/pbc`.
 
 ### License
 

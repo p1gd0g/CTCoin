@@ -264,7 +264,8 @@ func (tx *Transaction) Trace(t string) {
 
 	for i := 0; i < 3; i++ {
 		if x == crypto.Gete(t, tx.Inputs[i].P) {
-			fmt.Println("\033[1;31;40m", "Real transaction:", tx.Inputs[i].P, "\033[0m")
+			fmt.Println("\033[1;31;40m", "Real transaction:",
+				tx.Inputs[i].P, "\033[0m")
 			break
 		}
 	}
